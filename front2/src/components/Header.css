@@ -1,0 +1,37 @@
+.navbar {
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.navbar a {
+    transition: color 0.3s ease;
+}
+
+.text-light {
+    color: #f8f9fa; 
+}
+
+.text-dark {
+    color: #212529; 
+}
+
+.bg-light {
+    background-color: #f8f9fa;
+}
+
+.bg-dark {
+    background-color: #343a40; 
+}
+
+.custom-link {
+    text-decoration: none;
+    transition: all 0.2s ease-in-out;
+  }
+  
+  .custom-link:hover {
+    text-decoration: underline;
+  }
+  
+  .me-3 {
+    margin-right: 1rem;
+  }
+  

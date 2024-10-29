@@ -1,0 +1,30 @@
+/* App.css or your relevant CSS file */
+
+/* General styles */
+body {
+  transition: background-color 0.3s, color 0.3s; /* Smooth transition for colors */
+}
+
+[data-bs-theme="light"] {
+  --bg-color: #ffffff; /* Light background */
+  --text-color: #000000; /* Light text color */
+}
+
+[data-bs-theme="dark"] {
+  --bg-color: #343a40; /* Dark background */
+  --text-color: #ffffff; /* Light text color */
+}
+
+/* Header styles */
+.navbar {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+}
+
+/* Footer styles */
+.footer {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  padding: 20px;
+  text-align: center;
+}
