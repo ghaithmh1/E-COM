@@ -1,10 +1,11 @@
-import react from 'react' ;
+import React from 'react';
 import Layout from "./../components/Layout"
+import Hero from '../components/Hero';
 const HomePage =() => {
 
     return (
         <Layout>
-            <h2> this is the HomePage </h2>
+            <Hero/>
         </Layout>
     )
 }

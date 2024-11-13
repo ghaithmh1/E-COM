@@ -1,7 +1,11 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import { FcShop } from "react-icons/fc";
+import DarkModeSwitch from './DarkModeSwitch';
+
 import './Header.css'; 
+
+
 
 const Header = () => {
   return (
@@ -50,13 +54,16 @@ const Header = () => {
               </li>
             </ul>
             <form className="d-flex" role="search">
+            <div className="d-flex align-items-center ms-auto">
+              <DarkModeSwitch />
+            </div>
               <input 
                 className="form-control me-2" 
                 type="search" 
                 placeholder="Search" 
                 aria-label="Search" 
               />
-              <button className="btn btn-outline-success me-2" type="submit">Search</button>
+              
             </form>
             <NavLink to="/Register" className="nav-link custom-link me-3">Register</NavLink>
             <NavLink to="/Login" className="nav-link custom-link">Login</NavLink>

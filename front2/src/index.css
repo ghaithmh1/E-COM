@@ -50,3 +50,33 @@ code {
   flex-direction: column;
 }
 
+
+/* SideMenu.css */
+/* SideMenu.css */
+.side-menu {
+  position: fixed;
+  top: 0;
+  left: -250px; /* Initially hidden */
+  width: 250px;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.9); /* Semi-transparent background */
+  transition: left 0.3s ease;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
+  z-index: 1000; /* Ensure it appears above other content */
+}
+
+.side-menu.open {
+  left: 0; /* Slide in */
+}
+
+.side-menu ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.side-menu li {
+  padding: 10px;
+  cursor: pointer;
+}
+
+

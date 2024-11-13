@@ -1,6 +1,5 @@
 import React from 'react';
 import './Footer.css'; 
-import DarkModeSwitch from './DarkModeSwitch';
 
 const Footer = () => {
 
@@ -25,9 +24,7 @@ const Footer = () => {
               <li><a href="/contact" >Contact</a></li>
               <li><a href="/privacy-policy" >Privacy Policy</a></li>
             </ul>
-            <div className="d-flex align-items-center ms-auto">
-              <DarkModeSwitch />
-            </div>
+            
           </div>
           {/* Contact Section */}
           <div className="col-12 col-md-4 mb-3">
