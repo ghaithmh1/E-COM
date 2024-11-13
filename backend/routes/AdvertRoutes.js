@@ -1,5 +1,6 @@
 const express = require('express');
 const advertRoute = express.Router();
+
 const { addAdvert, getAdvertById, updateAdvert, patchAdvert, deleteAdvert, getAllAdverts } = require('../controllers/AdvertControllers');
 
 // POST /advert
