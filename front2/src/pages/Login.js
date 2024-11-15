@@ -3,44 +3,45 @@ import { useNavigate } from 'react-router-dom';
 import Layout from '../components/Layout';
 import { toast } from 'react-toastify';
 import axios from 'axios';
+import { useAuth } from '../redux/AuthContext'; 
+import "./log.css"
+import { Button } from '@mui/material';
 
 const Login = () => {
-  const navigate = useNavigate();
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [rememberMe, setRememberMe] = useState(false); 
+    const { login } = useAuth(); 
+    const navigate = useNavigate();
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
+    const [rememberMe, setRememberMe] = useState(false);
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    try {
-      const res = await axios.post(`http://localhost:5000/user/login`, {
-        email,
-        password,
-      });
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        try {
+            const res = await axios.post(`http://localhost:5000/user/login`, { email, password });
+            if (res.data && res.data.success) {
+                toast.success("Connection successful!");
 
-     
-      if (res.data && res.data.success) {
-        toast.success("Connection successful!");
-       
-        if (rememberMe) {
-          localStorage.setItem('email', email);
-        } else {
-          localStorage.removeItem('email');
+                if (rememberMe) {
+                    localStorage.setItem('email', email);
+                } else {
+                    localStorage.removeItem('email');
+                }
+
+                login(); 
+                setTimeout(() => {
+                    navigate('/');
+                }, 2000);
+            } else {
+                toast.error(res.data.msg || "Login failed. Please check your credentials.");
+            }
+        } catch (error) {
+            console.error("Error:", error);
+            toast.error(error.response?.data?.msg || "An unexpected error occurred.");
         }
-        setTimeout(() => {
-          navigate('/'); 
-        }, 2000);
-      } else {
-        toast.error(res.data.msg || "Login failed. Please check your credentials.");
-      }
-    } catch (error) {
-      console.error("Error:", error);
-      toast.error(error.response?.data?.msg || "An unexpected error occurred.");
-    }
-  };
+    };
 
-  return (
-    <Layout>
+    return (
+        <Layout>
       <div className="register">
         <h2>Login</h2>
         <form onSubmit={handleSubmit}>
@@ -79,7 +80,7 @@ const Login = () => {
             />
             <label className="form-check-label" htmlFor="rememberMeCheck">Remember me</label>
           </div>
-          <button type="submit" className="btn btn-outline-success me-2">Login</button>
+          <Button color="primary" type="submit" > Login </Button>
         </form>
       </div>
     </Layout>

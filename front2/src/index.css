@@ -1,82 +1,82 @@
 *{
-  margin:0;
-  padding :0;
-  box-sizing : border-box;
-}
-
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+    margin:0;
+    padding :0;
+    box-sizing : border-box;
+  }
   
-}
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-}
-
-
-
-
-/* ------------------NotFound---------*/
-.pnf {
-  display: flex;
-  min-height: 65vh;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-
-.title {
-  font-size: 100px;
-  font-weight: 700;
-}
-
-.heading {
-  font-weight: normal;
-}
-
-
-/* ------------------Login---------*/
-.register {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 70vh; 
-  flex-direction: column;
-}
-
-
-/* SideMenu.css */
-/* SideMenu.css */
-.side-menu {
-  position: fixed;
-  top: 0;
-  left: -250px; /* Initially hidden */
-  width: 250px;
-  height: 100%;
-  background: rgba(255, 255, 255, 0.9); /* Semi-transparent background */
-  transition: left 0.3s ease;
-  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
-  z-index: 1000; /* Ensure it appears above other content */
-}
-
-.side-menu.open {
-  left: 0; /* Slide in */
-}
-
-.side-menu ul {
-  list-style-type: none;
-  padding: 0;
-}
-
-.side-menu li {
-  padding: 10px;
-  cursor: pointer;
-}
-
-
+  body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+      'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+      sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    
+  }
+  
+  code {
+    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+      monospace;
+  }
+  
+  
+  
+  
+  /* ------------------NotFound---------*/
+  .pnf {
+    display: flex;
+    min-height: 65vh;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .title {
+    font-size: 100px;
+    font-weight: 700;
+  }
+  
+  .heading {
+    font-weight: normal;
+  }
+  
+  
+  /* ------------------Login---------*/
+  .register {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 70vh; 
+    flex-direction: column;
+  }
+  
+  
+  /* SideMenu.css */
+  /* SideMenu.css */
+  .side-menu {
+    position: fixed;
+    top: 0;
+    left: -250px; /* Initially hidden */
+    width: 250px;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.9); /* Semi-transparent background */
+    transition: left 0.3s ease;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
+    z-index: 1000; /* Ensure it appears above other content */
+  }
+  
+  .side-menu.open {
+    left: 0; /* Slide in */
+  }
+  
+  .side-menu ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .side-menu li {
+    padding: 10px;
+    cursor: pointer;
+  }
+  
+  

@@ -10,7 +10,7 @@ import { Pagination } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/pagination";
 import "./slider.css";
-import IconSection from "./IconSection";
+
 
 const mySlider = [
     { text: "MEN", link: ".//images/banner-15.jpg" },
@@ -243,7 +243,7 @@ const Hero = () => {
                     </Box>
                 </Box>
             </Box>
-            <IconSection />
+        
         </Container>
     );
 }

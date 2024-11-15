@@ -3,6 +3,8 @@ import Layout from '../components/Layout';
 import { toast } from 'react-toastify';
 import axios from 'axios'; 
 import { useNavigate } from 'react-router-dom';
+import "./log.css"
+import { Button } from '@mui/material';
 
 const Register = () => {
   const navigate = useNavigate();
@@ -101,9 +103,9 @@ const Register = () => {
               required
             />
           </div>
-          <button type="submit" className="btn btn-outline-success me-2">
+          <Button color="primary" type="submit" >
             Register
-          </button>
+          </Button>
         </form>
       </div>
     </Layout>

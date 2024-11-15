@@ -65,7 +65,7 @@ const deleteAdvert = async (req, res) => {
         const { id } = req.params;
         console.log("id", id);
         const deleteAdvert = await advertTest.findByIdAndDelete(id);
-        res.status(200).json({ msg: 'Advert', deletedAdvert });
+        res.status(200).json({ msg: 'Advert', deleteAdvert });
     } catch (error) {
         console.log(error);
         res.send('You have a problem');

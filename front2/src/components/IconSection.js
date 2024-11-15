@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { Button, Grid } from '@mui/material';
 import { useEffect, useState } from 'react';
-import { AnimatePresence, motion } from 'framer-motion';
+import AdvertCard from './AdvertCard';
 
 const IconSection = () => {
   const [arr, setArr] = useState([]);
@@ -14,12 +14,8 @@ const IconSection = () => {
       try {
         const response = await fetch('http://localhost:5000/advert/'); // Replace with your actual API endpoint
         const data = await response.json();
-        if (Array.isArray(data)) {
-          setAdverts(data); // Assuming the data is an array of adverts
-          setArr(data); // Initialize arr with the fetched data to show all adverts by default
-        } else {
-          console.error('Data is not an array:', data);
-        }
+        setAdverts(data.adverts); // Assuming the data is an array of adverts
+        setArr(data.adverts); // Initialize arr with the fetched data to show all adverts by default
       } catch (error) {
         console.error('Error fetching adverts:', error);
       }
@@ -41,7 +37,7 @@ const IconSection = () => {
   return (
     <>
       <div style={{ display: 'flex', justifyContent: 'center', paddingTop: '20px', paddingBottom: '20px' }}>
-        <Grid container spacing={2} justifyContent="center">
+        <Grid container spacing={4} justifyContent="center">
           {['all', 'clothes', 'vacation', 'jobs', 'cars', 'decoration', 'books'].map((cat) => (
             <Grid item key={cat}>
               <Button
@@ -56,33 +52,28 @@ const IconSection = () => {
         </Grid>
       </div>
 
-      <section className="right-section flex">
+      <section className="right-section flex" style={{ padding: '20px' }}>
         {arr && arr.length > 0 ? (
-          arr.map((item) => {
-            // Ensure imageAdvert is an array and contains an object with a path property
-            const imagePath = item.imageAdvert && item.imageAdvert.length > 0 ? item.imageAdvert[0].path : '';
+          <Grid container spacing={2} justifyContent="center">
+            {arr.map((item) => {
+              const imagePath = item.imageAdvert && item.imageAdvert.length > 0 ? item.imageAdvert[0].path : '';
 
-            return (
-              <div className="card" key={item._id}>
-                {imagePath ? (
-                  <img width={266} src={imagePath} alt={item.title} />
-                ) : (
-                  <p>No image available</p> // Fallback if imagePath is not available
-                )}
-                <div style={{ width: '266px' }} className="box">
-                  <h1 className="title">{item.title}</h1>
-                  <p className="sub-title">lorem ipsum</p>
-                  <div className="flex icons">
-                    <div style={{ gap: '11px' }} className="flex">
-                      <div className="icon-link"></div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            );
-          })
+              return (
+                <Grid item xs={12} sm={8} md={6} lg={4} key={item._id}>
+                  <AdvertCard
+                    title={item.title}
+                    price={item.price}
+                    description={item.description}
+                    imageAdvert={imagePath}
+                    category={item.category}
+                    city={item.city}
+                  />
+                </Grid>
+              );
+            })}
+          </Grid>
         ) : (
-          <p>No adverts found in this category</p> // Display message if no adverts are found
+          <p>No adverts found in this category</p>
         )}
       </section>
     </>

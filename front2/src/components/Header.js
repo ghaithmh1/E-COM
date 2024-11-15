@@ -2,6 +2,7 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 import { FcShop } from "react-icons/fc";
 import DarkModeSwitch from './DarkModeSwitch';
+import { Button } from '@mui/material';
 
 import './Header.css'; 
 
@@ -65,8 +66,13 @@ const Header = () => {
               />
               
             </form>
-            <NavLink to="/Register" className="nav-link custom-link me-3">Register</NavLink>
-            <NavLink to="/Login" className="nav-link custom-link">Login</NavLink>
+            <Button color="primary">
+    <NavLink to="/Register" className="nav-link custom-link" style={{ color: 'inherit', textDecoration: 'none' }}>
+        Register
+    </NavLink>
+</Button>
+<Button color="primary">
+            <NavLink to="/Login" className="nav-link custom-link " style={{ color: 'inherit', textDecoration: 'none' }}>Login</NavLink></Button>
           </div>
         </div>
       </nav>
