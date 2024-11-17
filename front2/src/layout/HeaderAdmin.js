@@ -1,7 +1,7 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import { FcShop } from "react-icons/fc";
-import DarkModeSwitch from './DarkModeSwitch';
+import DarkModeSwitch from '../tools/DarkModeSwitch';
 import { Button } from '@mui/material';
 import Avatar from '@mui/material/Avatar';
 import Stack from '@mui/material/Stack';
@@ -66,7 +66,7 @@ const Header2 = ({ onLogin }) => {
                                 aria-label="Search" 
                             />
                         </form>
-                        <Button color="primary">ADD PROD</Button>
+                        <Button color="primary">DUSHBORD</Button>
                         <Stack direction="row" spacing={2}>
                             <Avatar alt="Remy Sharp" src="/static/images/avatar/1.jpg" />
                         </Stack>

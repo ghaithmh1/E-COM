@@ -107,12 +107,14 @@ const loginUser = async (req, res) => {
         }
 
         // User authenticated
-        res.status(200).json({ success: true, msg: 'Login successful!', user });
+        const role = user.role; // Add this line to fetch the role from the user object
+        res.status(200).json({ success: true, msg: 'Login successful!', user, role });
     } catch (error) {
         console.error("Error logging in user:", error);
         res.status(500).json({ success: false, msg: 'There was a problem logging in the user', error: error.message });
     }
 };
+
 
 
 

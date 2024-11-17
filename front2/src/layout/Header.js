@@ -1,7 +1,7 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import { FcShop } from "react-icons/fc";
-import DarkModeSwitch from './DarkModeSwitch';
+import DarkModeSwitch from '../tools/DarkModeSwitch';
 import { Button } from '@mui/material';
 
 import './Header.css'; 

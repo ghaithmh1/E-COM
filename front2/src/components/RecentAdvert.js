@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { useEffect, useState } from 'react';
 import Grid from '@mui/material/Grid';
-import AdvertCard from './AdvertCard';
+import AdvertCard from '../tools/AdvertCard';
 
 const Recent = () => {
   const [arr, setArr] = useState([]);
@@ -26,15 +26,16 @@ const Recent = () => {
   }, []); 
   return (
     <>
-      <h2>Most Recent Publications</h2>
+      
       <section className="right-section flex" style={{ padding: '20px' }}>
+      <h2 className='titlere'>Most Recent Publications</h2>
         {arr && arr.length > 0 ? (
           <Grid container spacing={2} justifyContent="center">
             {arr.map((item) => {
               const imagePath = item.imageAdvert && item.imageAdvert.length > 0 ? item.imageAdvert[0].path : '';
 
               return (
-                <Grid item xs={12} sm={8} md={6} lg={4} key={item._id}>
+                <Grid item xs={12} sm={7} md={4} lg={3} key={item._id}>
                   <AdvertCard
                     title={item.title}
                     price={item.price}

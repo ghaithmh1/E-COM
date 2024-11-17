@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { Button, Grid } from '@mui/material';
 import { useEffect, useState } from 'react';
-import AdvertCard from './AdvertCard';
+import AdvertCard from '../tools/AdvertCard';
 
 const IconSection = () => {
   const [arr, setArr] = useState([]);
@@ -59,7 +59,7 @@ const IconSection = () => {
               const imagePath = item.imageAdvert && item.imageAdvert.length > 0 ? item.imageAdvert[0].path : '';
 
               return (
-                <Grid item xs={12} sm={8} md={6} lg={4} key={item._id}>
+                <Grid item xs={12} sm={7} md={4} lg={3} key={item._id}>
                   <AdvertCard
                     title={item.title}
                     price={item.price}
