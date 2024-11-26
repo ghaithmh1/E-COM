@@ -3,7 +3,7 @@ import Hero from '../components/Hero';
 import Recent from '../components/RecentAdvert';
 import AdvertCategories from './AdvertCategory';
 
-const Sidebar = ({ categories }) => {
+const Side = ({ categories }) => {
   return (
     <div className="webpage-sidebar">
       <ul className="webpage-sidebar-list">
@@ -18,23 +18,11 @@ const Sidebar = ({ categories }) => {
   );
 };
 
-const WebPage = ({ sidebarCategories, bannerData, infoBoxes, categoryData }) => {
-  return (
-    <div className="webpage-container">
-      <Sidebar categories={sidebarCategories} />
-      <div className="webpage-main-content">
-      <Hero/>
-            <Recent/>
-            <AdvertCategories/>
-      </div>
-    </div>
-  );
-};
 
 
 
 
-const Top = () => {
+const Sidebar = () => {
   const sidebarCategories = [
     { icon: 'fas fa-mobile-alt', name: 'Téléphone & Tablette' },
     { icon: 'fas fa-tv', name: 'TV & Hi Tech' },
@@ -53,12 +41,9 @@ const Top = () => {
   
 
   return (
-    <WebPage
-      sidebarCategories={sidebarCategories}
-     
-    />
+    <Side categories={sidebarCategories} />
   );
 };
 
-export default Top;
+export default Sidebar;
 

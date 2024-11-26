@@ -7,6 +7,7 @@ import Register from "./pages/Register"
 import Login from "./pages/Login"
 import PageNotFound from "./pages/PageNotFound"
 import Product from "./pages/Product"
+import Admin from './pages/AdminDashboard';
 
 function App() {
   return (
@@ -18,6 +19,10 @@ function App() {
     <Route path="/Register" element={<Register/>}/>
     <Route path="/Login" element={<Login/>}/>
     <Route path="/Products" element={<Product/>}/>
+
+    <Route path="/Admin" element={<Admin/>}/>
+
+
     <Route path="/*" element={<PageNotFound/>}/>
   </Routes>
     
